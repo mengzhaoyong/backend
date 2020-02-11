@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.icbc.tech</groupId>
+        <artifactId>framework-demo-multi-module</artifactId>
+        <version>0.8.1-Release</version>
+        <relativePath>../../framework-demo-multi-module/pom.xml</relativePath> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.icbc.tech</groupId>
+    <artifactId>framework-demo-multi-module-api</artifactId>
+    <version>0.8.1-Release</version>
+    <name>framework-demo-multi-module-api</name>
+    <description>Demo Module for API</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.icbc.tech</groupId>
+            <artifactId>framework-demo-multi-module-common</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.2</version>
+                <executions>
+                    <execution>
+                        <id>Generate MyBatis Artifacts</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- generator xml -->
+                    <configurationFile>D:/workspace/hrm/back/framework-demo-multi-module/framework-demo-multi-module-api/src/main/resources/mybatis-generator/generatorConfig.xml</configurationFile>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
+            </plugin>
+        </plugins>
+        <!--<resources>
+            <resource>
+            <resource>
+                <directory>../framework-demo-multi-module-api/src/main/resources</directory>
+                <includes>
+                    <include>application-pro.properties</include>
+                </includes>
+                <targetPath>../config</targetPath>
+            </resource>
+            <resource>
+                <directory>../framework-demo-multi-module-api/src/main/resources</directory>
+                <includes>
+                    <include>log4j2-pro.xml</include>
+                </includes>
+                <targetPath>../config</targetPath>
+            </resource>
+            <resource>
+                <directory>../config</directory>
+                <includes>
+                    <include>*.properties</include>
+                </includes>
+                <targetPath>../config</targetPath>
+            </resource>
+        </resources>-->
+    </build>
+
+</project>

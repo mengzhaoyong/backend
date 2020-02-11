@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.icbc.tech</groupId>
+        <artifactId>framework-demo-multi-module</artifactId>
+        <version>0.8.1-Release</version>
+        <relativePath>../../framework-demo-multi-module/pom.xml</relativePath> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.icbc.tech</groupId>
+    <artifactId>framework-demo-multi-module-common</artifactId>
+    <version>0.8.1-Release</version>
+    <name>framework-demo-multi-module-common</name>
+    <description>Demo Module for Common</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+</project>
